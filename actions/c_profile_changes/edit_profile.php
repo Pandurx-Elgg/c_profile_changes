@@ -60,6 +60,12 @@ if (elgg_is_xhr()) {  //This is an Ajax call!
                         return true;
                     }
                 } // end if, $f == email
+                
+                // cyu - modified @ 09-08-2015: updating the briefdescription for users
+                if ($f == 'job') {
+                    $user->set('briefdescription',$v);
+                }
+                
                 $user->set($f, $v);
             }
 
